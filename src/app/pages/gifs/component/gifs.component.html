@@ -1,0 +1,22 @@
+<input (input)="setSearchInput()" [(ngModel)]="value" class="search-input" placeholder="Search..."/>
+<div class="grid-container" *ngIf="(gifs$ | async) as gifs; else loading">
+  <div class="grid-item" *ngFor="let gif of gifs">
+    <img [ngSrc]="gif.images.original.url" loading="lazy" [alt]="gif.title" fill/>
+    <div class="overlay">
+      <h2 class="name">{{ gif.title }}</h2>
+      <p class="date">{{ gif.importDatetime | date: 'MMM dd yyy' }}</p>
+    </div>
+  </div>
+</div>
+<div *ngIf="pages.length" class="pages">
+  <i [class.active]="page === currentPage" (click)="setCurrentPage(page)" *ngFor="let page of pages">{{ page }}</i>
+</div>
+<ng-template #loading>
+  <div class="grid-container">
+    <div class="grid-item" *ngFor="let skeleton of Array.from({length: itemsPerPage})">
+      <div class="image-skeleton">
+        <div class="image-skeleton__image"></div>
+      </div>
+    </div>
+  </div>
+</ng-template>

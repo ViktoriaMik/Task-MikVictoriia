@@ -1,0 +1,99 @@
+@import "/src/assets/variables";
+
+.search-input {
+  all: unset;
+  width: 50%;
+  border-radius: 10px;
+  background: $white;
+  height: 30px;
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
+//grid container
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  align-items: stretch;
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  position: relative;
+}
+
+.grid-item img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  margin: 0;
+  font-size: $title-font-size;
+  color: $black;
+}
+
+.date {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  margin: 0;
+  font-size: $title-font-size;
+  color: $white;
+}
+
+.pages {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: $page-font-size;
+  text-align: center;
+
+  .active {
+    font-weight: bold;
+  }
+}
+
+
+//loading skeleton
+.image-skeleton {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #f3f3f3;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-skeleton__image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f3f3f3 0%, #e0dbdb 50%, #f3f3f3 100%);
+  background-size: 200% 100%;
+  animation: shimmer 5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+

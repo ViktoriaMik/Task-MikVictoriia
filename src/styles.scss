@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@import "assets/variables.scss";
+body {
+  margin: 0;
+  height: 100%;
+  font-size: 18px;
+  box-sizing: border-box;
+  letter-spacing: 0 !important;
+  background: $neutral-blue-background;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $scrollbar-thumb;
+  border-radius: 5px;
+  max-height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: $scrollbar-track;
+}
